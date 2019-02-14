@@ -6,7 +6,7 @@
 Projects
 =========
 
-1. [React](react/)
+1. [React](react-app/)
 
 
 
