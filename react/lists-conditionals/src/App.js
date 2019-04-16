@@ -11,11 +11,19 @@ class App extends Component {
   }
 
   inputChangeListener = (event) => {
-    
     let text = event.target.value;
     let size = text.length;
 
     this.setState({fieldSize: size, text: text});
+  }
+
+  filterCharHandler = (char) => {
+    const text = this.state.text;
+    const regex = new RegExp(char, 'g');
+
+    let filterdText = text.replace(regex, '');
+    let size = filterdText.length;
+    this.setState({text: filterdText, fieldSize: size});
   }
 
   render() {
@@ -25,10 +33,10 @@ class App extends Component {
     
     inputField = (
       <div>
-        <input onChange={this.inputChangeListener} />
+        <input onChange={this.inputChangeListener} value={this.state.text} />
         <p>{this.state.fieldSize}</p>
         <ValidationComponent size={this.state.fieldSize}/>
-        { chars.map(char => <CharComponent letter={char} />)}
+        { chars.map(char => <CharComponent click={() => this.filterCharHandler(char) } letter={char} />)}
       </div>
     );
 

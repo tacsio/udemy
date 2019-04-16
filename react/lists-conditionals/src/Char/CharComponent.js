@@ -13,7 +13,7 @@ export class CharComponent extends Component {
 
 
     return (
-      <div className="Char">
+      <div onClick={this.props.click} className="Char">
         { charBox }
       </div>
     )
