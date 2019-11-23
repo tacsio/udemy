@@ -9,7 +9,8 @@ const persons = (props) =>
               name={person.name}
               age={person.age} 
               changed={(event) => props.changed(event, person.id)}
-              click={() => props.clicked(index)}/> 
+              click={() => props.clicked(index)}
+              isAuth={props.authenticated}/> 
   });
 
 export default persons;

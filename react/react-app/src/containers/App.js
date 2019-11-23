@@ -13,7 +13,8 @@ class App extends Component {
       { id: 3, name: "Benjamim Hornigold", age: 45 }
     ],
   otherState: "Some other value",
-  showPersons: false
+  showPersons: false,
+  authenticated: false
   }
 
   nameChangedHandler = (event, id) => {
@@ -44,6 +45,11 @@ class App extends Component {
     this.setState({persons: persons});
   }
 
+  handleLogin = () => {
+    const authenticated = !this.state.authenticated;
+    this.setState({ authenticated});
+  }
+
   render() {
     let persons = null;
     
@@ -52,7 +58,8 @@ class App extends Component {
           <Persons 
             persons={this.state.persons}
             clicked={this.deletePersonHandler}
-            changed={this.nameChangedHandler} />;
+            changed={this.nameChangedHandler}
+            authenticated={this.state.authenticated} />;
     }
 
     return (
@@ -60,7 +67,9 @@ class App extends Component {
         <Cockpit 
           persons={this.state.persons}
           clicked={this.togglePersonsHandler}
-          showPerson={this.state.showPersons} />
+          showPerson={this.state.showPersons} 
+          login={this.handleLogin}
+          logged={this.state.authenticated}/>
         { persons }
       </div>
     );
