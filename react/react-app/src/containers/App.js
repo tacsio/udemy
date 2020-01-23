@@ -70,13 +70,13 @@ class App extends Component {
 				<AuthContext.Provider value={
 					{
 						authenticated: this.state.authenticated,
-						login: this.handleLogin 
+						login: this.handleLogin
 					}
 				}>
 					<Cockpit
 						persons={this.state.persons}
 						clicked={this.togglePersonsHandler}
-						showPerson={this.state.showPersons}/>
+						showPerson={this.state.showPersons} />
 					{persons}
 				</AuthContext.Provider>
 			</div>
