@@ -1,6 +1,5 @@
 ![Logo][Logo]
 
-[![Build Status][Status]](https://travis-ci.org/tacsio/udemy)
 [![GitHub issues][Issues]](https://github.com/tacsio/udemy/issues)
 
 Projects
