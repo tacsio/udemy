@@ -17,6 +17,7 @@ export default function BuildControls({
   ingredients,
   price,
   purchasable,
+  ordered,
 }) {
   const disabled = { ...ingredients };
 
@@ -40,7 +41,11 @@ export default function BuildControls({
         />
       ))}
 
-      <button disabled={purchasable === false} className={css.OrderButton}>
+      <button
+        disabled={purchasable === false}
+        onClick={ordered}
+        className={css.OrderButton}
+      >
         ORDER NOW
       </button>
     </div>
